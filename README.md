@@ -10,18 +10,17 @@ Este repositorio contiene una colección de ejemplos prácticos de código utili
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠 Tecnologías utilizadas
 
-| Tecnología | Versión |
-|------------|---------|
-| **Java** | 21 / 17 |
-| **Spring Boot** | 3.2.x |
-| **Spring Security** | 6.x |
-| **Spring Data JPA** | 3.x |
-| **Hibernate** | 6.x |
-| **PostgreSQL / MySQL** | - |
-| **Maven** | 3.8+ |
-| **JWT (JJWT)** | 0.12.x |
-| **Lombok** | 1.18.x |
+## Tecnología
 
+- **Java** 
+- **Spring Boot** 
+- **Spring Security**
+- **JDBC** 
+- **Spring Data JPA** 
+- **Hibernate** 
+- **PostgreSQL / MySQL** 
+- **Maven** 
+- **JWT (JJWT)**
 
