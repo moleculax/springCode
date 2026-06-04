@@ -19,8 +19,9 @@ Este repositorio contiene una colección de ejemplos prácticos de código utili
 - **Spring Security**
 - **JDBC** 
 - **Spring Data JPA** 
-- **Hibernate** 
-- **PostgreSQL / MySQL** 
+- **Hibernate**
+- **H2 Database** (Base de datos en memoria para pruebas y desarrollo) 
+- **PostgreSQL** 
 - **Maven** 
 - **JWT (JJWT)**
 
