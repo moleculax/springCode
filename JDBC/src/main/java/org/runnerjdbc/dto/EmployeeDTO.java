@@ -1,4 +1,4 @@
-package org.runnerjdbc;
+package org.runnerjdbc.dto;
 
 import lombok.Data;
 

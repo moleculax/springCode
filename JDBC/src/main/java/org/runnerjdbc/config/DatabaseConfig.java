@@ -1,4 +1,4 @@
-package org.runnerjdbc.conexion;
+package org.runnerjdbc.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
