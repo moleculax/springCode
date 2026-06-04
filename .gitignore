@@ -1,0 +1,31 @@
+# Compilación y build
+target/
+build/
+out/
+
+# Archivos de clase
+*.class
+
+# Logs
+*.log
+
+# Configuración de IDEs
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+
+# Variables de entorno y claves
+.env
+*.key
+*.pem
+
+# Archivos temporales
+*.tmp
+*.bak
+
