@@ -7,7 +7,8 @@ import java.sql.Statement;
 
 public class DatabaseConfig {
 
-    public Connection getConnection() throws SQLException {
+    // CONEXION H2
+    public Connection getH2Connection() throws SQLException {
         final var jdbcUrl = "jdbc:h2:~/test;DB_CLOSE_DELAY=-1";
         final var userDB = "sa";
         final var password = "";
@@ -22,4 +23,28 @@ public class DatabaseConfig {
 
         return conn;
     }
+
+
+    // CONEXION MariaDB
+    public Connection getMariaDbConnection() throws SQLException {
+        final var jdbcUrl = "jdbc:mariadb://localhost:3306/neurocode";
+        final var userDB = "admin";
+        final var password = "admin123";
+
+        Connection conn = DriverManager.getConnection(jdbcUrl, userDB, password);
+        return conn;
+    }
+
+    // CONEXION  PostgreSQL
+    public Connection getPostgresConnection() throws SQLException {
+        final var jdbcUrl = "jdbc:postgresql://localhost:5432/base_de_datos";
+        final var userDB = "tu_usuario";
+        final var password = "tu_password";
+
+        Connection conn = DriverManager.getConnection(jdbcUrl, userDB, password);
+        return conn;
+    }
+
+
+
 }

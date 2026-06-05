@@ -25,7 +25,7 @@ public class EmpleadosRepository {
                             JOIN departments d ON(e.department_id = d.id);
                         """;
 
-        try (var conn = dbConfig.getConnection();
+        try (var conn = dbConfig.getH2Connection();
              Statement stmt = conn.createStatement()) {
 
             ResultSet rs = stmt.executeQuery(query);
