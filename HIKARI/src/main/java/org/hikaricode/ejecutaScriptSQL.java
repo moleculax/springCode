@@ -22,14 +22,14 @@ public class ejecutaScriptSQL {
              FileInputStream fis = new FileInputStream(path);
              Scanner scanner = new Scanner(fis, StandardCharsets.UTF_8)) {
 
-            // 3. Usamos el punto y coma como delimitador para separar cada comando SQL
+        // 3. Usamos el punto y coma como delimitador para separar cada comando SQL
             scanner.useDelimiter(";");
 
             System.out.println("Leyendo y ejecutando esquema SQL...");
             while (scanner.hasNext()) {
                 String sqlContenido = scanner.next().trim();
 
-                // Evitamos ejecutar líneas en blanco o vacías en el archivo
+        // Evitamos ejecutar líneas en blanco o vacías en el archivo
                 if (!sqlContenido.isEmpty()) {
                     statement.execute(sqlContenido);
                 }
