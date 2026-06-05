@@ -1,19 +1,32 @@
 package org.example;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.example.config.DatabaseH2Config;
+import org.example.dto.EmployeeDTO;
+
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
 
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-//        IO.println(String.format("Hello and welcome!"));
-//
-//        for (int i = 1; i <= 5; i++) {
-//            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-//            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-//            IO.println("i = " + i);
-//        }
+
+
+        DatabaseH2Config dbConfig = new DatabaseH2Config();
+        LosDatosH2 losDatos = new LosDatosH2(dbConfig.getDataSource());
+        ejecutaScriptSQL ejecutaScriptSQL = new ejecutaScriptSQL();
+        ejecutaScriptSQL.execSqlScript(dbConfig.getDataSource());
+
+        List<EmployeeDTO> employees = losDatos.getEmployees();
+
+        for (EmployeeDTO emp : employees) {
+            System.out.println(emp);
+        }
+
     }
-}
+
+
+
+}// END CLASS Main
