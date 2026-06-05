@@ -37,10 +37,10 @@ public class ejecutaScriptSQL {
             System.out.println("¡Script SQL ejecutado con éxito!");
 
         } catch (FileNotFoundException e) {
-            System.err.println("❌ No se encontró el archivo schema.sql en: " + path);
+            System.err.println(" No se encontró el archivo schema.sql en: " + path);
             throw new RuntimeException(e);
         } catch (SQLException e) {
-            System.err.println("❌ Error de sintaxis SQL al ejecutar el script: " + e.getMessage());
+            System.err.println(" Error de sintaxis SQL al ejecutar el script: " + e.getMessage());
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
