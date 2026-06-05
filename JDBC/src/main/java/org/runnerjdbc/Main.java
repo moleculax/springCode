@@ -9,9 +9,13 @@ public class Main {
         var employees = empleadosRepository.getEmployees();
         // employees.forEach(System.out::println);
 
-        for (var emp : employees) {
-            System.out.println(emp.getName()+" / "+emp.getEmail()+" / "+emp.getDepartmentName());
-        }
+//        for (var emp : employees) {
+//            System.out.println(emp.getName()+" / "+emp.getEmail()+" / "+emp.getDepartmentName());
+//        }
+
+        employees.forEach(emp -> System.out.println(emp.getName()
+                +" / "+emp.getEmail()+" / "
+                +emp.getDepartmentName()));
 
     }
 

@@ -38,7 +38,6 @@ public class DatabaseConfig {
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(initDB);
         }
-
         return conn;
     }
 
