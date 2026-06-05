@@ -1,7 +1,7 @@
-package org.example;
+package org.hikaricode;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.example.dto.EmployeeDTO;
+import org.hikaricode.dto.EmployeeDTO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

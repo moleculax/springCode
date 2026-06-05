@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.hikaricode.dto;
 
 import lombok.Data;
 

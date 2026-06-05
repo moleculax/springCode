@@ -1,4 +1,4 @@
-package org.example;
+package org.hikaricode;
 
 import com.zaxxer.hikari.HikariDataSource;
 import java.io.FileInputStream;
