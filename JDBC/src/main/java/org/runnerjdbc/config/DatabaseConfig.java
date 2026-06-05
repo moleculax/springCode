@@ -9,6 +9,7 @@ public class DatabaseConfig {
 
     // CONEXION H2
     public Connection getH2Connection() throws SQLException {
+    	
 
 // CONFIGURACIÓN DE BASE DE DATOS H2
 // ============================================================
@@ -28,12 +29,14 @@ public class DatabaseConfig {
 // ' + scriptPath + ' → concatena la ruta del archivo al comando
 // El resultado final será: RUNSCRIPT FROM 'src/main/resources/schema.sql'
 
+
         final var jdbcUrl = "jdbc:h2:~/test;DB_CLOSE_DELAY=-1";
         final var userDB = "sa";
         final var password = "";
         final var scriptPath = "src/main/resources/schema.sql";
         final var initDB = "RUNSCRIPT FROM '" + scriptPath + "'";
         // ============================================================
+        
         Connection conn = DriverManager.getConnection(jdbcUrl, userDB, password);
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(initDB);
