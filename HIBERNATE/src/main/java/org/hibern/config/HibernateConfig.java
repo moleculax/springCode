@@ -15,7 +15,9 @@ public class HibernateConfig {
     private static final String CONFIG_PATH = "src/main/resources/hibernate.properties";
 
     public static SessionFactory buildSessionFactory() {
+        
         var properties = new Properties();
+
         try {
             properties.load(new FileInputStream(CONFIG_PATH));
             return new Configuration()
