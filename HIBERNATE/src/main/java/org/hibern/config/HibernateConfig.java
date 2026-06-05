@@ -1,6 +1,8 @@
 package org.hibern.config;
 
 import lombok.Getter;
+import org.hibern.entity.DepartamentEntity;
+import org.hibern.entity.EmployeeEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -15,7 +17,7 @@ public class HibernateConfig {
     private static final String CONFIG_PATH = "src/main/resources/hibernate.properties";
 
     public static SessionFactory buildSessionFactory() {
-        
+
         var properties = new Properties();
 
         try {
@@ -23,6 +25,8 @@ public class HibernateConfig {
             return new Configuration()
                     // .mergeProperties(properties)  // COMENTADO - método no existe en Hibernate 6
                     .addProperties(properties)      // CORRECTO - método equivalente en Hibernate 6
+                    .addAnnotatedClass(EmployeeEntity.class)
+                    .addAnnotatedClass(DepartamentEntity.class)
                     .buildSessionFactory();
 
         } catch (IOException e) {
