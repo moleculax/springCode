@@ -12,8 +12,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-
-
         DatabaseH2Config dbConfig = new DatabaseH2Config();
         LosDatosH2 losDatos = new LosDatosH2(dbConfig.getDataSource());
         ejecutaScriptSQL ejecutaScriptSQL = new ejecutaScriptSQL();
@@ -22,7 +20,7 @@ public class Main {
         List<EmployeeDTO> employees = losDatos.getEmployees();
 
         for (EmployeeDTO emp : employees) {
-            System.out.println(emp);
+            System.out.println(emp.getName() + " - " + emp.getEmail() + " - " + emp.getDepartmentName());
         }
 
     }
