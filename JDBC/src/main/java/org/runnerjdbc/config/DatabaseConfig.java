@@ -37,9 +37,9 @@ public class DatabaseConfig {
 
     // CONEXION  PostgreSQL
     public Connection getPostgresConnection() throws SQLException {
-        final var jdbcUrl = "jdbc:postgresql://localhost:5432/base_de_datos";
-        final var userDB = "tu_usuario";
-        final var password = "tu_password";
+        final var jdbcUrl = "jdbc:postgresql://localhost:5432/neurocode";
+        final var userDB = "admin";
+        final var password = "admin123";
 
         Connection conn = DriverManager.getConnection(jdbcUrl, userDB, password);
         return conn;
