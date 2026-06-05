@@ -10,9 +10,9 @@ Este repositorio contiene una colección de ejemplos prácticos de código utili
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## 🛠 Tecnologías/Fundamentos
 
-## Tecnología
+
 
 - **Java** 
 - **Spring Boot** 
@@ -20,8 +20,11 @@ Este repositorio contiene una colección de ejemplos prácticos de código utili
 - **JDBC** 
 - **Spring Data JPA** 
 - **Hibernate**
+- **Hikari**
 - **H2 Database** (Base de datos en memoria para pruebas y desarrollo) 
 - **PostgreSQL** 
 - **Maven** 
 - **JWT (JJWT)**
 
+```
+Se actualiza con frecuencia
