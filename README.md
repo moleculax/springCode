@@ -16,19 +16,20 @@ Este repositorio contiene una colección de ejemplos prácticos de código utili
 
 - **Java** 
 - **Spring Boot** 
-- **Spring Security**
-- **JDBC** 
-- **Spring Data JPA** 
-- **Hibernate**
-- **Hikari**
-- **H2 Database** (Base de datos en memoria para pruebas y desarrollo) 
+- **JDBC** - (Java Database Connectivity) - El estándar base
+- **JPA** - Define un conjunto de reglas y estándares para el mapeo objeto-relaciona
+- **Hibernate** - El ORM más popular
+- **Hikari** - El connection pool más rápido
+- **H2 Database** - Base de datos en memoria para pruebas y desarrollo
 - **PostgreSQL** 
-- **Maven** 
-- **JWT (JJWT)**
+- **Maven** - Herramienta de gestión y construcción de proyectos
+- **JWT**- JSON Web Token
 
 ```
 Se actualiza con frecuencia
 
 ```
+
+
 
 [https://moleculaxapp.vercel.app/](https://moleculaxapp.vercel.app/)
