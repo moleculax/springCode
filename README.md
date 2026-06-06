@@ -17,9 +17,9 @@ Repositorio con varios ejemplos prácticos  utilizando **Spring Boot**. Cada eje
 - **Java** 
 - **Spring Boot** 
 - **JDBC** - (Java Database Connectivity) - El estándar base
-- **JPA** - Define un conjunto de reglas y estándares para el mapeo objeto-relaciona
+- **JPA** - Define un conjunto de reglas y estándares para el mapeo objeto-relacional
 - **Hibernate** - El ORM más popular
-- **Hikari** - El connection pool más rápido
+- **Hikari** - Connection pool más rápido
 - **H2 Database** - Base de datos en memoria para pruebas y desarrollo
 - **PostgreSQL** 
 - **Maven** - Herramienta de gestión y construcción de proyectos
