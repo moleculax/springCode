@@ -9,7 +9,7 @@ public class JpaAppApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(JpaAppApplication.class, args);
-		
+
 	}
 
 }
