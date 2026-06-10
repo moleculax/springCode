@@ -1,10 +1,13 @@
 package com.debugapp.jpa_app.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "orders")
+@Data
 public class OrderEntity {
 
 //    CREATE TABLE orders (
@@ -24,6 +27,12 @@ public class OrderEntity {
     private String clientName;
     @Column(name = "id_bill", nullable = false, unique = true, length = 64)
     private String idBill;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_bill", referencedColumnName = "id", insertable = false, updatable = false)
+    private BillEntity bill;
+
+
 
 
 
