@@ -1,9 +1,6 @@
 package com.debugapp.jpa_app;
 
-import com.debugapp.jpa_app.service.BillService;
-import com.debugapp.jpa_app.service.InsertdatosService;
-import com.debugapp.jpa_app.service.OrderService;
-import com.debugapp.jpa_app.service.UnifiedService;
+import com.debugapp.jpa_app.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,14 +12,16 @@ public class JpaAppApplication implements CommandLineRunner {
 	private final OrderService orderService;
 	private final BillService billService;
 	private final UnifiedService unifiedService;
-	private final InsertdatosService insertdatosService;
+	private final InsertBillOrdersService insertBillOrdersService;
+	private final DeleleBillOrderService deleleBillOrderService;
 
 	@Autowired
-	public JpaAppApplication(OrderService orderService, BillService billService, UnifiedService unifiedService, InsertdatosService insertdatosService) {
+	public JpaAppApplication(OrderService orderService, BillService billService, UnifiedService unifiedService, InsertBillOrdersService insertBillOrdersService, DeleleBillOrderService deleleBillOrderService) {
 		this.orderService = orderService;
 		this.billService = billService;
 		this.unifiedService = unifiedService;
-		this.insertdatosService = insertdatosService;
+		this.insertBillOrdersService = insertBillOrdersService;
+		this.deleleBillOrderService = deleleBillOrderService;
 	}
 
 	public static void main(String[] args) {
@@ -38,8 +37,12 @@ public class JpaAppApplication implements CommandLineRunner {
 
 		// =======================================================
 		// INSERTO NUEVOS DATOS
-		insertdatosService.insertdatos();
+		insertBillOrdersService.insertdatos();
 		// ======================================================
+		// ELIMINIO SI EXISTE
+		deleleBillOrderService.deleteByIdBill("BILL-003"); // Reemplaza "BILL-001" con el ID de la factura que deseas eliminar
+		// ========================================================
+
 
 
 		var unificados = unifiedService.getUnifiedResults();

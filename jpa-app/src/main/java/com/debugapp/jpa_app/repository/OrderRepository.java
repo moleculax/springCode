@@ -20,6 +20,9 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
     // AGREGAMOS PERSONALIZADOS
      Optional<OrderEntity> findByIdBill(String idBill);
      List<OrderEntity> findByClientName(String clientName);
+     void deleteByIdBill(String idBill);
+     boolean existsByIdBill(String idBill);
+
     // =============================================================
 
 }// END interface
