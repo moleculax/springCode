@@ -25,7 +25,7 @@ public class InsertdatosService {
     public void insertdatos() {
         System.out.println("INSERTAMOS NUEVO DATO");
 
-        String billId = "BILL-001";
+        String billId = "BILL-002";
 
         // VERIFICO SI LA FACTURA EXISTE
         if (billRepository.findById(billId).isEmpty()) {
@@ -33,21 +33,24 @@ public class InsertdatosService {
             BillEntity bill = new BillEntity();
             bill.setId(billId);
             bill.setTotalAmount(BigDecimal.valueOf(100.0));
-            bill.setRfc("RFC-001");
+            bill.setRfc("RFC-002");
+            // ============================================
             billRepository.save(bill);
-            System.out.println("FCTURA GUARDADA");
+            System.out.println("FACTURA GUARDADA");
 
             // CREA Y GUARDA ÑA ORDEN  (usando idBill como String)
             OrderEntity order = new OrderEntity();
             order.setIdBill(billId);  // Usar idBill como String
             order.setCreatedAt(LocalDateTime.now());
-            order.setClientName("Pepe Lepon");
+            order.setClientName("Lupe Lepon");
+            // ============================================
             orderRepository.save(order);
-            System.out.println("Orden guardada");
+            System.out.println("ORDEN GUARDADA");
+
         } else {
             System.out.println("La factura ya existe No se Insertara");
         }
 
-        System.out.println("PROCESO COMPLETADO CON EXITO");
+       // System.out.println("PROCESO COMPLETADO CON EXITO");
     }
 }

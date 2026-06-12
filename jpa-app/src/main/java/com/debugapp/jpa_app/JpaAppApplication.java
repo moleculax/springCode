@@ -35,6 +35,13 @@ public class JpaAppApplication implements CommandLineRunner {
 		// orderService.run(args);
 		// billService.getBills();
 		// orderService.getOrders();
+
+		// =======================================================
+		// INSERTO NUEVOS DATOS
+		insertdatosService.insertdatos();
+		// ======================================================
+
+
 		var unificados = unifiedService.getUnifiedResults();
 
 		System.out.println("========= RESULTADOS UNIFICADOS ========");
@@ -65,7 +72,7 @@ public class JpaAppApplication implements CommandLineRunner {
 			}
 		});
 
-		insertdatosService.insertdatos();
+
 	} //run(String... args)
 
 }

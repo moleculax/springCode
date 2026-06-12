@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class BillService implements CommandLineRunner {
+//public class BillService implements CommandLineRunner {
+public class BillService  {
     @Autowired
     private final BillRepository billRepository;
 
@@ -21,13 +22,13 @@ public class BillService implements CommandLineRunner {
         this.billRepository = billRepository;
     }
 
-    @Override
-    public void run(String... args) {
-        billRepository.findAll().forEach(bill ->
-                System.out.println(bill.getId() + " / " + bill.getTotalAmount() + " / " + bill.getRfc()));
-
-
-    }
+//    @Override
+//    public void run(String... args) {
+//        billRepository.findAll().forEach(bill ->
+//                System.out.println(bill.getId() + " / " + bill.getTotalAmount() + " / " + bill.getRfc()));
+//
+//
+//    }
 
 
 
