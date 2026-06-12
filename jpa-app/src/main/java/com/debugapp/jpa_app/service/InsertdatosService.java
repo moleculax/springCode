@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class InsertdatosService {
@@ -26,31 +28,52 @@ public class InsertdatosService {
         System.out.println("INSERTAMOS NUEVO DATO");
 
         String billId = "BILL-002";
+        String idBill = billId; // Reemplaza con el ID que deseas buscar/actualizar
+        // ============================================
+        // 1. VERIFICAR Y ACTUALIZAR/GUARDAR FACTURA
+        // ============================================
+        Optional<BillEntity> existingBill = billRepository.findById(billId);
 
-        // VERIFICO SI LA FACTURA EXISTE
-        if (billRepository.findById(billId).isEmpty()) {
-            // SI NO EXISTE CREA Y GUARDA
+        if (existingBill.isEmpty()) {
+            // SI NO EXISTE: CREAR NUEVA FACTURA
             BillEntity bill = new BillEntity();
             bill.setId(billId);
             bill.setTotalAmount(BigDecimal.valueOf(100.0));
             bill.setRfc("RFC-002");
-            // ============================================
             billRepository.save(bill);
-            System.out.println("FACTURA GUARDADA");
-
-            // CREA Y GUARDA ÑA ORDEN  (usando idBill como String)
-            OrderEntity order = new OrderEntity();
-            order.setIdBill(billId);  // Usar idBill como String
-            order.setCreatedAt(LocalDateTime.now());
-            order.setClientName("Lupe Lepon");
-            // ============================================
-            orderRepository.save(order);
-            System.out.println("ORDEN GUARDADA");
-
+            System.out.println("✅ FACTURA CREADA");
         } else {
-            System.out.println("La factura ya existe No se Insertara");
+            // SI EXISTE: ACTUALIZAR FACTURA
+            BillEntity bill = existingBill.get();
+            bill.setTotalAmount(BigDecimal.valueOf(150.0));  // Actualizar monto
+            bill.setRfc("RFC-002");                  // Actualizar RFC
+            billRepository.save(bill);
+            System.out.println("✅ FACTURA ACTUALIZADA");
         }
 
-       // System.out.println("PROCESO COMPLETADO CON EXITO");
+        // ============================================
+        // 2. VERIFICAR Y ACTUALIZAR/GUARDAR ORDEN
+        // ============================================
+        // USO Optional y no List porque  solo puede haber 0 o 1 resultado
+        Optional<OrderEntity> existingOrder = orderRepository.findByIdBill(idBill); // Reemplaza con el ID que deseas buscar/actualizar
+
+        if (existingOrder.isEmpty()) {
+            // SI NO EXISTE: CREAR NUEVA ORDEN
+            OrderEntity order = new OrderEntity();
+            order.setIdBill(billId);
+            order.setCreatedAt(LocalDateTime.now());
+            order.setClientName("Lupe Lepon");
+            orderRepository.save(order);
+            System.out.println("ORDEN CREADA");
+        } else {
+            // SI EXISTE: ACTUALIZAR ORDEN
+            OrderEntity order = existingOrder.get();
+            order.setClientName("Lupe P. Lepon"); // Actualizar nombre del cliente
+            order.setCreatedAt(LocalDateTime.now());
+            orderRepository.save(order);
+            System.out.println(" ORDEN ACTUALIZADA");
+        }
+
+        System.out.println("✅ PROCESO COMPLETADO CON EXITO");
     }
 }
