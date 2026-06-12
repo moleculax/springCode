@@ -1,6 +1,7 @@
 package com.debugapp.jpa_app;
 
 import com.debugapp.jpa_app.service.BillService;
+import com.debugapp.jpa_app.service.InsertdatosService;
 import com.debugapp.jpa_app.service.OrderService;
 import com.debugapp.jpa_app.service.UnifiedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,14 @@ public class JpaAppApplication implements CommandLineRunner {
 	private final OrderService orderService;
 	private final BillService billService;
 	private final UnifiedService unifiedService;
+	private final InsertdatosService insertdatosService;
 
 	@Autowired
-	public JpaAppApplication(OrderService orderService, BillService billService, UnifiedService unifiedService) {
+	public JpaAppApplication(OrderService orderService, BillService billService, UnifiedService unifiedService, InsertdatosService insertdatosService) {
 		this.orderService = orderService;
 		this.billService = billService;
 		this.unifiedService = unifiedService;
+		this.insertdatosService = insertdatosService;
 	}
 
 	public static void main(String[] args) {
@@ -34,21 +37,19 @@ public class JpaAppApplication implements CommandLineRunner {
 		// orderService.getOrders();
 		var unificados = unifiedService.getUnifiedResults();
 
+		System.out.println("========= RESULTADOS UNIFICADOS ========");
 
-	System.out.println("========= RESULTADOS UNIFICADOS ========");
-//
-//		// Facturas
+		// Facturas
 //		billService.getBills().forEach(bill ->
 //				System.out.println("Bill: " + bill.getId() + " / " + bill.getTotalAmount() + " / " + bill.getClientRfc())
 //		);
-//
-//		// Órdenes
+
+		// Órdenes
 //		orderService.getOrders().forEach(order ->
 //				System.out.println("Order: " + order.getId() + " / " + order.getClientName()
 //						+ " / " + order.getCreatedAt()
 //						+ " / " + order.getIdBill())
 //		);
-//	}
 
 		unificados.forEach(unified -> {
 			if (unified.getIdBill() != null) {
@@ -63,6 +64,8 @@ public class JpaAppApplication implements CommandLineRunner {
 						+ " / SIN FACTURA");
 			}
 		});
-	}
+
+		insertdatosService.insertdatos();
+	} //run(String... args)
 
 }

@@ -1,13 +1,19 @@
 package com.debugapp.jpa_app.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
 @Table(name = "orders")
 @Data
+@NoArgsConstructor  // constructor sin argumentos
+@AllArgsConstructor // constructor con todos los argumentos
 public class OrderEntity {
 
 //    CREATE TABLE orders (

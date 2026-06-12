@@ -1,6 +1,8 @@
 package com.debugapp.jpa_app.dto;
 
 
+import lombok.Builder;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
