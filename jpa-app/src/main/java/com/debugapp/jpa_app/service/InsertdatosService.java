@@ -55,7 +55,8 @@ public class InsertdatosService {
         // 2. VERIFICAR Y ACTUALIZAR/GUARDAR ORDEN
         // ============================================
         // USO Optional y no List porque  solo puede haber 0 o 1 resultado
-        Optional<OrderEntity> existingOrder = orderRepository.findByIdBill(idBill); // Reemplaza con el ID que deseas buscar/actualizar
+        // findByIdBill es personalizado
+        Optional<OrderEntity> existingOrder = orderRepository.findByIdBill(idBill); // BUSCAMOS ORDEN POR ID DE FACTURA (ID BILL)
 
         if (existingOrder.isEmpty()) {
             // SI NO EXISTE: CREAR NUEVA ORDEN
